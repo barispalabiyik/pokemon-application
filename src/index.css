@@ -1,13 +1,187 @@
+:root {
+  --pokeGray: #665e5e;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: "Ubuntu",-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f3f4;
+  padding: 50px 10px;
+  color: var(--pokeGray);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+a {
+  color: var(--pokeGray);
+  text-decoration: none;
+}
+
+.App {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* List Part */
+
+.listBody > img{
+  margin: auto;
+  text-align: center;
+
+}
+
+.listBody > :first-child{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"]{
+  padding: 10px 60px 10px 4px;
+  margin: 20px 0;
+
+}
+
+.listContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.listContainer__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 30px;
+  place-items: center;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .listContainer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .listContainer__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.listContainer__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #fafafa;
+  width: 100%;
+  min-height: 300px;
+  border: solid var(--pokeGray) 2px;
+  border-radius: 6px;
+}
+
+.listContainer__card > img {
+  max-width: 90px;
+  height: auto;
+  border-radius: 6px;
+}
+.listContainer__card > h3 {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.listContainer__card:hover {
+  background-color: #e6e6e6;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
+
+/* Detail Part */
+.detailContainer {
+  max-width: 500px;
+  margin: auto;
+  position: relative;
+  justify-content: space-evenly;
+  background-color: #fafafa;
+  min-height: 200px;
+  border: solid var(--pokeGray) 2px;
+  padding: 30px;
+}
+
+.detailContainer__title{
+  font-weight: 500;
+}
+
+.detailContainer__detailTitle {
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+
+
+.detailContainer > h3 {
+  text-transform: capitalize;
+  margin: 20px 0;
+}
+
+.detailContainer > h4 {
+  text-align: left;
+  font-size: larger;
+  font-weight: 500;
+
+}
+
+.detailContainer li {
+  text-transform: capitalize;
+}
+
+::marker {
+  padding: 0px;
+  line-height: 0px;
+  font-size: 0.7rem;
+}
+
+.detailContainer__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  cursor: pointer;
+  text-align: right;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.detailContainer > img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 6px;
 }
