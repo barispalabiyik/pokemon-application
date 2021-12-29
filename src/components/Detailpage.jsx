@@ -11,10 +11,15 @@ export default function Detailpage() {
   useEffect(() => {
     const loadPokemon = async () => {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+
+      /*If the data can't be accessed, the redirect will be thrown.*/
+      if (response.status !== 200) {
+        window.location.href = "/pokemon";
+      }
       const data = await response.json();
       setPokemonData(data);
     };
-
+      /*To use useParams in the useEffect hook we need to call function that is inside. The hook in the List component doesn't need it*/
     loadPokemon();
   }, []);
 
@@ -25,10 +30,10 @@ export default function Detailpage() {
       </Link>
 
       <img
-        src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${name}.gif`}
-        alt={`Image of a Pokemon named ${name}`}
+        src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemonData?.name}.gif`}
+        alt={`Image of a Pokemon named ${pokemonData?.name}`}
       />
-      <h3 className="detailContainer__title" >{name}</h3>
+      <h3 className="detailContainer__title">{pokemonData?.name}</h3>
       <h4>
         <span className="detailContainer__detailTitle">ID:</span>{" "}
         {pokemonData?.id}
