@@ -13,12 +13,16 @@ export default function List() {
 
   const loadPokemon = async () => {
     /* Fetching the data from the API and setting it to the state. */
-    const response = await fetch("https://pokeapi.co/api/v2/generation/1/");
+    /* To get first generation by default const response = await fetch("https://pokeapi.co/api/v2/generation/1/"); */
+    const response = await fetch(
+      "https://pokeapi.co/api/v2/pokemon?offset=0&limit=151"
+    );
     if (response.status !== 200) {
       console.log("Error fetching data");
     }
     const data = await response.json();
-    setListData(data?.pokemon_species);
+    /* Other query fetching setListData(data?.pokemon_species); */
+    setListData(data?.results);
   };
 
   return (
