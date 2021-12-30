@@ -105,8 +105,9 @@ input[type="text"]{
 }
 
 .listContainer__card > img {
-  max-width: 90px;
-  height: auto;
+  width: auto;
+  max-height: 250px;
+  min-height: 50px;
   border-radius: 6px;
   margin-bottom: 40px;
   margin-top: 40px;
