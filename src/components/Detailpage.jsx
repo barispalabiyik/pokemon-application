@@ -29,10 +29,10 @@ export default function Detailpage() {
         X
       </Link>
 
-      <img
+     {pokemonData.name && <img
         src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemonData?.name}.gif`}
         alt={`Image of a Pokemon named ${pokemonData?.name}`}
-      />
+      />} 
       <h3 className="detailContainer__title">{pokemonData?.name}</h3>
       <h4>
         <span className="detailContainer__detailTitle">ID:</span>{" "}
